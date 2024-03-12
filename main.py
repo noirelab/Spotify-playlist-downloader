@@ -5,8 +5,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 def getTracks(playlist_id, output_file):
-    client_id = '644b1df8c9b34f19b9eacf684f44d4c2'
-    client_secret = '357800ac67314c0ab4a7936cca3cb1d0'
+    client_id = 'CLIENT ID'
+    client_secret = 'CLIENT SECRET'
     client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
     
@@ -25,7 +25,7 @@ def getTracks(playlist_id, output_file):
             file.write(f"{artist} - {track_name}\n")
 
 def searchYoutube(query):
-    api_key = "AIzaSyB8LH3Us2FujNWtcsfl1dkbhhoFnJEKP4c"
+    api_key = "API KEY"
 
     url = f"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q={query}&key={api_key}"
     response = requests.get(url)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     playlist_id = '37i9dQZF1DZ06evO2lVf2b'
     output_file = 'playlist_tracks.txt'
     output_folder = 'downloads'
-    input_file = r"C:\Users\kaiqu\2024\project\playlist_tracks.txt"
+    input_file = r"C:\PATH_TO_LOCATION\playlist_tracks.txt"
     
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
